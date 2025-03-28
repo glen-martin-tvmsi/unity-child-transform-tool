@@ -1,5 +1,5 @@
 {
-  "name": "unity-child-transform-tool",
+  "name": "com.glen-martin-tvmsi.unitychildtransformtool",
   "version": "0.4.0",
   "displayName": "Child Transform Tool",
   "description": "A Unity Editor Extension for batch-modifying transforms of child GameObjects",
