@@ -1,11 +1,16 @@
 {
   "name": "com.glen-martin-tvmsi.unitychildtransformtool",
-  "version": "0.3.0",
-  "displayName": "Unity Child Transform Tool",
-  "description": "A Unity Editor Extension for batch-modifying transform properties of child GameObjects",
+  "version": "0.4.0",
+  "displayName": "UnityChildTransformTool",
+  "description": "A Unity Editor Extension for batch-modifying transform properties (position, rotation, scale) of child GameObjects.",
   "unity": "2019.4",
   "author": {
-    "name": "Glen+Adam"
+    "name": "Glen+Adam",
+    "url": "https://github.com/glen-martin-tvmsi"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/glen-martin-tvmsi/unity-child-transform-tool.git"
   },
   "keywords": [
     "unity",

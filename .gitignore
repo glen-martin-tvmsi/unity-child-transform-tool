@@ -1,4 +1,4 @@
-# Unity specific files
+# Unity specific files/folders to ignore
 [Ll]ibrary/
 [Tt]emp/
 [Oo]bj/
@@ -6,14 +6,12 @@
 [Bb]uilds/
 [Ll]ogs/
 [Uu]serSettings/
-.vs/
-.vscode/
-*.csproj
-*.unityproj
-*.sln
-*.user
-.DS_Store
-node_modules/
 
-# Development artifacts
-/Dev/
+# Development artifacts (not part of UPM package)
+Dev/
+
+# OS-specific files to ignore
+.DS_Store
+
+# Node.js modules (if any)
+node_modules/
