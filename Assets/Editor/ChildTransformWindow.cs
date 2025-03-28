@@ -69,24 +69,43 @@ public class ChildTransformWindow : EditorWindow
     {
         if (parentTransform == null || parentTransform.childCount == 0) return;
 
-        if (parentTransform.childCount > MAX_CHILDREN_WARNING)
+        int totalChildren = CountTotalChildren(parentTransform);
+        if (totalChildren > MAX_CHILDREN_WARNING)
         {
-            if (!EditorUtility.DisplayDialog("Warning", $"This will modify {parentTransform.childCount} children. Continue?", "Yes", "No")) 
+            if (!EditorUtility.DisplayDialog("Warning", $"This will modify {totalChildren} children. Continue?", "Yes", "No")) 
                 return;
         }
 
         Undo.IncrementCurrentGroup();
         Undo.SetCurrentGroupName("Modify Child Transforms");
         
-        foreach (Transform child in parentTransform)
+        ProcessTransformRecursively(parentTransform);
+
+        Undo.CollapseUndoOperations(Undo.GetCurrentGroup());
+        EditorUtility.SetDirty(parentTransform.gameObject);
+    }
+
+    private int CountTotalChildren(Transform transform)
+    {
+        int count = transform.childCount;
+        foreach (Transform child in transform)
+        {
+            count += CountTotalChildren(child);
+        }
+        return count;
+    }
+
+    private void ProcessTransformRecursively(Transform transform)
+    {
+        foreach (Transform child in transform)
         {
             if (updatePosition) UpdatePosition(child);
             if (updateScale) UpdateScale(child);
             if (updateRotation) UpdateRotation(child);
+            
+            // Recursively process children
+            ProcessTransformRecursively(child);
         }
-
-        Undo.CollapseUndoOperations(Undo.GetCurrentGroup());
-        EditorUtility.SetDirty(parentTransform.gameObject);
     }
 
     void UpdatePosition(Transform child)
