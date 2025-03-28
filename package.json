@@ -1,0 +1,11 @@
+{
+  "name": "UnityChildTransformTool",
+  "version": "0.1",
+  "displayName": "Child Transform Tool",
+  "description": "A Unity Editor Extension for batch-modifying transforms of child GameObjects",
+  "author": "Glen+Adam",
+  "license": "MIT",
+  "scripts": {
+    "build": "./Build/build.sh"
+  }
+}
