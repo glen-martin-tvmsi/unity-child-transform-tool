@@ -1,0 +1,16 @@
+{
+  "name": "com.glen-martin-tvmsi.unitychildtransformtool",
+  "version": "0.3.0",
+  "displayName": "Unity Child Transform Tool",
+  "description": "A Unity Editor Extension for batch-modifying transform properties of child GameObjects",
+  "unity": "2019.4",
+  "author": {
+    "name": "Glen+Adam"
+  },
+  "keywords": [
+    "unity",
+    "editor",
+    "transform",
+    "batch-modify"
+  ]
+}
